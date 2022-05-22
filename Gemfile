@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'dotenv'
+gem 'kimurai'
+gem 'rufus-scheduler'
+gem 'telegram-bot-ruby'
