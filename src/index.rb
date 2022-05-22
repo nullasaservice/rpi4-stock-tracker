@@ -11,7 +11,7 @@ rejected_regions = ["(US)", "(JP)", "(CA)", "(CN)", "(ZA)"]
 
 log_app "App running! Running cron job each #{ENV['SCHEDULER_TIME_FREQUENCY']}."
 
-scheduler.in ENV['SCHEDULER_TIME_FREQUENCY'] do
+scheduler.every ENV['SCHEDULER_TIME_FREQUENCY'] do
   log_cron "Starting task..."
   rpi_locator_entries = RpiLocatorSpider.parse!(:parse, url: "https://rpilocator.com")
   rpi4_8gb_entries_eur = rpi_locator_entries.select { |e| e.sku == ENV['RPI_SKU'] && rejected_regions.none? { |zone| e.vendor.include? zone } }
