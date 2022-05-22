@@ -3,7 +3,7 @@ This page uses the amazing work @ https://rpilocator.com to notify via Telegram 
 
 ## Install
 1. Install and run `bundle` gem, to get required dependencies.
-2. Check [kimurai installation docs](https://github.com/vifreefly/kimuraframework#installation), as you will need to install manually PhantomJS.
+2. Check [kimurai installation docs](https://github.com/vifreefly/kimuraframework#installation), as you will need to install manually selenium-chromedriver. Make sure to not use the link provided there to download chromedriver, as it is so old it will fail to run the script with it. Check your Chrome/Chromium version and download proper version [here](https://chromedriver.chromium.org/downloads).
 3. Fill .env file with the required environment variables (example @ `.env.example`).
 
 ## Usage

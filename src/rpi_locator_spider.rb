@@ -3,7 +3,7 @@ require 'uri'
 require_relative 'rpi_locator_entry.rb'
 
 class RpiLocatorSpider < Kimurai::Base
-  @engine = :poltergeist_phantomjs
+  @engine = :selenium_chrome
 
   def parse(response, url:, data: {})
     in_stock_rows = response.xpath("//*[contains(@class, 'table-success')]")
