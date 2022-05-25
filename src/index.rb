@@ -7,7 +7,11 @@ require_relative 'logger.rb'
 
 Dotenv.load
 scheduler = Rufus::Scheduler.new
-rejected_regions = ["(US)", "(JP)", "(CA)", "(CN)", "(ZA)"]
+
+# initialize rejected_regions array
+rejected_regions = ENV['REJECTED_REGIONS']
+rejected_regions = rejected_regions.split ","
+rejected_regions.map! { |r| "(" + r + ")" }
 
 log_app "App running! Running cron job each #{ENV['SCHEDULER_TIME_FREQUENCY']}."
 
